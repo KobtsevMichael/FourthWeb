@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/game.css">
+
+    <title>Site</title>
+  </head>
+  <body>
+
+    <main class="w-75 mx-auto">
+      <div class="container">
+        <h1 class="my-3">10 Squares</h1>
+
+        <div class="field" id="field"></div>
+
+        <div class="text-center d-none mt-5" id="win-message">
+          <h2>
+            You found 10 squares in <span id="total-time-played"></span>
+            seconds
+          </h2>
+        </div>
+        <button class="btn btn-dark btn-lg w-100 mt-3"
+        id="button-reload"> Start game </button>
+      </div>
+    </main>
+
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/game.js"></script>
+  </body>
+</html>

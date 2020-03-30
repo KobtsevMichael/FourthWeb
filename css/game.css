@@ -1,0 +1,29 @@
+.field {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: auto;
+}
+
+@media (max-width: 767.98px) {
+  .field {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.game-slot {
+  background-color: orange;
+  height: 10vh;
+  margin: 1px;
+  line-height: 10vh;
+}
+
+.target {
+  background-color: green;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+
+.miss {
+  background-color: red;
+}
