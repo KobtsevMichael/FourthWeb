@@ -30,7 +30,7 @@ function newRound() {
     endGame()
   }
   else {
-    greenSlot = randomSlotId();
+    greenSlot = randomSlotId(greenSlot);
     greenSlot.addClass("target");
     greenSlot.text(hits);
   }

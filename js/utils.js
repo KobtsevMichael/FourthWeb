@@ -5,12 +5,19 @@ function getTime() {
   return new Date().getTime();
 }
 
-function randomSlotId() {
+function randomSlotId(oldSlot) {
 
-  row = Math.floor(Math.random() * numberRows) + 1;
-  col = Math.floor(Math.random() * numberColumns) + 1;
+  oldSlotId = (oldSlot) ? oldSlot[0].id : oldSlot;
 
-  return $(`#slot-${row}${col}`);
+  let row, col, newSlot;
+  do {
+    row = Math.floor(Math.random() * numberRows) + 1;
+    col = Math.floor(Math.random() * numberColumns) + 1;
+    newSlot = $(`#slot-${row}${col}`);
+
+  } while (oldSlotId == newSlot[0].id);
+
+  return newSlot;
 }
 
 function createField() {
