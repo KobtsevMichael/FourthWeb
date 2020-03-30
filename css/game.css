@@ -1,29 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+main {
+  font-size: 36px;
+  width: 75%;
+}
+h1 {
+  font-size: 100%;
+}
+
 .field {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: auto;
+}
+.game-slot {
+  background-color: orange;
+  line-height: 10vh;
+  height: 10vh;
+  margin: 1px;
+}
+.target {
+  background-color: green;
+  color: white;
+  font-size: 75%;
+  text-align: center;
+}
+.miss {
+  background-color: red;
+}
+.win-message h2 {
+  font-size: 70%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1em 2em;
 }
 
 @media (max-width: 767.98px) {
   .field {
     grid-template-columns: repeat(5, 1fr);
   }
-}
-
-.game-slot {
-  background-color: orange;
-  height: 10vh;
-  margin: 1px;
-  line-height: 10vh;
-}
-
-.target {
-  background-color: green;
-  color: white;
-  font-size: 24px;
-  text-align: center;
-}
-
-.miss {
-  background-color: red;
+  main {
+    font-size: 30px;
+    width: 85%;
+  }
 }
