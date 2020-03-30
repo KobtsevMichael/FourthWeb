@@ -1,12 +1,12 @@
 const maxHits = 10;
 
-let firstHitTime = 0;
-let hits = 0;
+let firstHitTime, hits;
 
 let greenSlot = null;
 let redSlot = null;
 
 function endGame() {
+
   $("#field").addClass("d-none");
   isPlaying = false;
 
@@ -15,8 +15,8 @@ function endGame() {
   $("#total-time-played").text(totalSeconds);
 
   $("#win-message").removeClass("d-none");
-  $("#button-reload").prop("disabled", false);
 
+  $("#button-reload").prop("disabled", false);
   $("#button-reload").removeClass("btn-dark");
   $("#button-reload").addClass("btn-success");
 }
@@ -26,13 +26,13 @@ function newRound() {
   if (greenSlot) {clearGreenSlot()}
   if (redSlot) {clearRedSlot()}
 
-  if (hits === maxHits) {
+  if (hits === maxHits+1) {
     endGame()
   }
   else {
-    greenSlot = randomSlotId(greenSlot);
+    greenSlot = randomSlotId();
     greenSlot.addClass("target");
-    greenSlot.text(hits+1);
+    greenSlot.text(hits);
   }
 }
 
@@ -48,9 +48,7 @@ function clearGreenSlot() {
 
 function showRedSlot() {
 
-  if (hits > 1) {hits--}
-
-  greenSlot.text(hits);
+  greenSlot.text((hits > 1) ? --hits : hits);
   redSlot.addClass("miss");
 }
 
@@ -78,7 +76,7 @@ function newGame() {
 
   firstHitTime = getTime();
   isPlaying = true;
-  hits = 0;
+  hits = 1;
 
   newRound();
 }
